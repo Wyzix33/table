@@ -1,0 +1,133 @@
+.vt
+ display: grid
+ grid-template-columns: 1fr
+ grid-template-rows: repeat(2, auto) 1fr auto
+ grid-column-gap: 0px
+ grid-row-gap: 0px
+ height: 100%
+ font-size: 12px
+
+ .vhead
+  display: flex
+  .filter
+   display: block
+   text-align: left
+   position: relative
+   .op
+    padding: 0 2px
+    position: absolute
+    top: 0
+    &:hover
+     background: $gray1-color
+    &[aria-expanded="true"]
+     background-color: $lightgreen1-color
+    &.contains::before
+     content: '\220B'
+    &.ne::before
+     content: '\220C'
+    &.eq::before
+     content: '\003D'
+    &.neq::before
+     content: '\2260'
+    &.starts::before
+     content: '\22A2'
+    &.any::before
+     content: '\21E2'
+    &.between::before
+     content: '\21B9'
+    &.gte::before
+     content: '\2265'
+    &.lte::before
+     content: '\2264'
+   input
+    box-sizing: border-box
+    width: 100%
+    padding-left: 16px
+
+  .cid
+   display: flex
+   align-items: center
+   justify-content: center
+   min-width: 40px
+   max-width: 40px
+   user-select: none
+   box-shadow: 0 1px 1px 0 $blue4-color
+   &::after
+    content: '#'
+    color: $blue4-color
+  .col
+   text-align: center
+   box-shadow: 0 1px 1px 0 $blue4-color
+   user-select: none
+   display: inline-block
+   font-weight: bold
+   position: relative
+   &.asc
+    &::before
+     content: '\25B2'
+     color: $blue4-color
+     position: absolute
+     top: 0
+     right: 0
+   &.desc
+    &::before
+     content: '\25BC'
+     color: $blue4-color
+     position: absolute
+     top: 0
+     right: 0
+  .opt
+   min-width: 10px
+   display: flex
+   justify-content: center
+   align-items: center
+   &::after
+    display: block
+    content: '\205D'
+    color: $error-color
+    font-weight: 600
+ .vport
+  position: relative
+  overflow: overlay
+  padding-right: 10px
+  .vh
+   z-index: 0
+  .vtable
+   border-spacing: 0
+   table-layout: fixed
+   position: sticky
+   top: 0
+   border-collapse: collapse
+   float: left
+   width: 100%
+   &.allcenter
+    td
+     text-align: center
+   &.idx
+    td:nth-of-type(1)
+     font-size: larger
+     color: $blue4-color
+     text-align: center
+     width: 40px
+     font-size: 11px
+   & > tr
+    align-items: center
+    box-shadow: 0 0 1px 0 $blue2-color
+    &:hover,
+    &.selected
+     background: $transparent-lightgreen-color
+    & > td
+     height: 15px
+     padding: 0 2px
+     text-overflow: ellipsis
+     overflow: hidden
+     border-right: 1px solid $blue1-color
+     vertical-align: middle
+     user-select: none
+     box-sizing: border-box
+     &:last-child
+      border: none
+      &:first-child
+       border: none
+     &.selected
+      background: $transparent-blue-color6

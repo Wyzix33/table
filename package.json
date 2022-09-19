@@ -1,0 +1,17 @@
+{
+ "name": "table",
+ "version": "1.0.0",
+ "description": "tables",
+ "main": "table.js",
+ "author": "Floricel Gabriel-Costin",
+ "license": "No License",
+ "private": true,
+ "sideEffects": false,
+ "dependencies": {
+  "event": "Wyzix33/event",
+  "socket": "link:../socket",
+  "split.js": "^1.6.5",
+  "utils": "Wyzix33/utils",
+  "tooltip": "Wyzix33/tooltip"
+ }
+}
